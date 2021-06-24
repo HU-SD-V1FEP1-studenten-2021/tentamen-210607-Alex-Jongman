@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- 
+  Naam:
+  Studentnr:
+ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEP1 Tentamen 210607</title>
+
+  <link rel="stylesheet" href="src/view/styles/styles.css" />
+</head>
+<body>
+  
+  <header class="page-header">
+    <h1>Stock</h1>
+  </header>
+
+
+  <main>
+    <aside id="filters" class="filters" aria-labelledby="filters-title">
+      <h2 id="filters-title">Filters</h2>
+      <form>
+        <div>
+          <input id="filter-low-availability" type="checkbox" />
+          <label for="filter-low-availability">Only low availability</label>
+        </div>
+        <div>
+          <input id="filter-available-season" type="checkbox" checked/>
+          <label for="filter-available-season">Currently for sale</label>
+        </div>
+      </form>
+    </aside>
+
+    <table id="table">
+      <caption>Ingredients</caption>
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Available</th>
+          <th scope="col">Unit</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody id="table-body">
+      </tbody>
+      
+    </table>
+
+    <button id="button-add-ingredient" class="button button-primary">Add ingredient</button>
+
+    <aside id="content-footer">
+      <h2>Meta data</h2>
+      
+      <section id="calculated-price">
+        Shopping list total: &euro;<output>10.50</output>
+      </section>
+    </aside>
+  </main>
+
+  <dialog id="add-dialog">
+    <h2>Add ingredient</h2>
+    <form id="add-form">
+      <!-- TODO: Add your HTML-1 solution here -->
+    </form>
+    <button id="close-add-dialog" class="button">Close</button>
+  </dialog>
+
+  <footer class="page-footer">
+    <button id="reset" class="button">Reset ingredients</button>
+    <span class="page-footer-text">Made with ❤️ by you</span>
+  </footer>
+
+  <template id="row-template">
+    <tr>
+      <th class="ingredient-title" scope="row"></th>
+      <td>
+        <label for="available-milk" class="table-available-label sr-only">Actuele voorraad</label>
+        <button class="button button-small availability-increase">+</button>
+        <input id="available-milk" class="table-available-input" type="number" min="0" />
+        <button class="button button-small availability-decrease">-</button>
+      </td>
+      <td class="units-label"></td>
+      <td>
+        <button class="button info-button">Info</button>
+        <span class="button button-destructive remove-button">Remove</span>
+        <dialog>
+          <h2 class="ingredient-title"></h2>
+          <dl>
+            <dt>Available</dt>
+            <dd class="available"></dd>
+            <dt>Minimum</dt>
+            <dd class="minimum"></dd>
+            <dt>Optimum</dt>
+            <dd class="optimum"></dd>
+            <dt><span class="units-label"></span> to buy</dt>
+            <dd class="units-to-buy"></dd>
+            <dt>Price per unit</dt>
+            <dd>&euro;<span class="unit-price"></span></dd>
+          </dl>
+          <p>Total price: &euro;<output class="ingredient-total-price"></output></p>
+          <button class="button button-primary dialog-close">Close</button>
+        </dialog>
+      </td>
+    </tr>
+  </template>
+
+  <script type="module" src="src/view/stock_management.js"></script>
+</body>
+</html>

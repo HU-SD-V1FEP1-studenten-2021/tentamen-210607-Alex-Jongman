@@ -1,0 +1,80 @@
+/* 
+  Studentnr: 
+  Naam:
+ */
+
+table {
+  width: 100%;
+}
+
+thead {
+  display: none;
+}
+
+tbody th {
+  text-align: left;
+}
+
+tr {
+  display: grid;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 7px;
+  grid-template-columns: 1fr auto auto;
+  row-gap: .5rem;
+  justify-items: start;
+}
+
+td:last-child {
+  grid-column: 1 / -1;
+}
+
+td:not(:last-child) button {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+}
+
+table caption {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.table-available-input {
+  width: 3rem;
+}
+
+.table-available-label {
+  font-size: 0.7rem;
+  font-weight: lighter;
+}
+
+.optimum + dt,
+.optimum + dt + dd {
+  margin-top: 1rem;
+}
+
+.low-on-stock {
+  border-color: #f44336;
+}
+
+thead {
+  display: initial;
+}
+
+thead tr {
+  margin-bottom: 0;
+  border: none;
+}
+
+th:first-of-type {
+  justify-self: start;
+}
+
+td:last-child {
+  grid-column: initial;
+}
+
+/* TODO: Add your CSS assignment solutions here */

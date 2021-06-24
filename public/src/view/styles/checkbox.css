@@ -1,0 +1,50 @@
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 1.5rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"] + label::before,
+input[type="checkbox"] + label::after {
+  position: absolute;
+  top: 0;
+  display: block;
+  content: "";
+  transition: opacity .15s ease;
+  color: #2196f3;
+  border-width: 2px;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+input[type="checkbox"] + label::before {
+  width: 1rem;
+  height: 1rem;
+  opacity: .5;
+  border-radius: 3px;
+}
+
+input[type="checkbox"] + label::after {
+  width: .4rem;
+  height: .7rem;
+  transform: translate(80%, 10%) rotate(45deg);
+  opacity: 0;
+  border-top: none;
+  border-left: none;
+  border-radius: 1px;
+}
+
+input[type="checkbox"]:checked + label::before,
+input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+}
+
+input[type="checkbox"]:focus + label::before {
+  opacity: 1;
+  color: blue;
+}

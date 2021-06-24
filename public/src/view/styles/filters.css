@@ -1,0 +1,24 @@
+#filters form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+
+@media (min-width: 768px) {
+  #filters form {
+    justify-content: flex-start;
+    margin: initial;
+  }
+
+  #filters form > * {
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 960px) {
+  #filters form {
+    margin-top: 1rem;
+    max-width: 200px;
+  }
+}

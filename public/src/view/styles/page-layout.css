@@ -1,0 +1,101 @@
+body {
+  display: grid;
+  max-width: 1280px;
+  margin: auto;
+  grid-template-rows: auto 1fr auto;
+}
+
+
+main {
+  display: grid;
+  padding: 1rem;
+  grid-template-areas: 
+    "filters"
+    "table"
+    "action"
+    "metadata";
+  grid-auto-rows: min-content;
+  gap: 1rem;
+}
+
+#filters {
+  grid-area: filters;
+}
+
+#table {
+  grid-area: table;
+}
+
+#button-add-ingredient {
+  grid-area: action;
+  align-self: self-start;
+}
+
+#content-footer {
+  grid-area: metadata;
+}
+
+#content-footer h2 {
+  display: none;
+}
+
+#calculated-price {
+  margin-top: 1rem;
+}
+
+.page-header {
+  padding: 1rem;
+  text-align: center;
+}
+
+.page-footer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.page-footer-text {
+  margin-top: 1rem;
+}
+
+#calculated-price {
+  padding-top: .5em;
+  text-align: right;
+  border-top: 1px solid black;
+}
+
+input[type="text"],
+input[type="number"] {
+  display: inline-block;
+  text-align: center;
+  border: 2px solid #e0e0e0;
+  border-radius: 4px;
+}
+
+@media (min-width: 768px) {
+  #button-add-ingredient {
+    justify-self: flex-start;
+  }
+}
+
+@media (min-width: 960px) {
+  main {
+    grid-template-columns: 1fr max-content;
+    grid-template-areas:
+      "table filters"
+      "table metadata"
+      "action metadata";
+    grid-template-rows: auto auto 1fr;
+    column-gap: 2rem;
+    padding: 2rem;
+  }
+
+  #filters {
+    margin-bottom: 1rem;
+  }
+
+  #content-footer h2 {
+    display: initial;
+  }
+}
