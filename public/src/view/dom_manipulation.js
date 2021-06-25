@@ -160,6 +160,12 @@ export default class DOMService {
    */
   markLowOnStock(ingredient, row) {
     // TODO: Add your WEB-1 solution here
+    console.log(ingredient);
+    console.log(row);
+
+    if (ingredient.quantity.available < ingredient.quantity.minimum) {
+      row.querySelector('tr').classList.add('low-on-stock');
+    }
   }
 
   createRowForIngredient(ingredient) {
