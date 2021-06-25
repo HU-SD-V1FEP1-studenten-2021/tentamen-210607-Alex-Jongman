@@ -146,8 +146,11 @@ export default class DOMService {
    * @param {DOM-Node} row
    */
   attachButtonEventListeners(row) {
-    this.attachInfoButtonEventListeners(row);
+    // this.attachInfoButtonEventListeners(row);
     // TODO: Add your WEB-3 solution here
+    row.querySelectorAll('.button').forEach((button) => {
+      button.addEventListener('click', handleButtonClick);
+    })
   }
 
   attachChangeEventListeners(row) {
