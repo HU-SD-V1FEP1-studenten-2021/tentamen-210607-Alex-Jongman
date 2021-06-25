@@ -34,8 +34,14 @@ function addUnitsToBuy(ingredient) {
  * @returns {Number} - estimated total price.
  */
 function getTotalPrice(ingredientsToDisplay) {
-  // TODO: Replace the return statement and add your JS-2 solution here
-  return 0;
+  // TODO: Replace the return statement and add your JS-2 solution her
+  const totalPrice = ingredientsToDisplay
+    .filter((ingredient) => ingredient.availableSeason)
+    .reduce((total, ingredient) => {
+      const ingredientPrice = ingredient.unitsToBuy * ingredient.averagePricePerUnit;
+      return total + ingredientPrice;
+    }, 0);
+  return totalPrice;
 }
 
 function getIngredientsToDisplay() {
