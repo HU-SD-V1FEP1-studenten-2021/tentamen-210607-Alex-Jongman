@@ -68,7 +68,9 @@ function handleButtonClick(event) {
  */
 function toTitle(id) {
   // TODO: Replace the return statement and add your JS-1 solution here
-  return id;
+  const FIRSTLETTER = 0;
+  const SECONDLETTER = 1;
+  return id.charAt(FIRSTLETTER).toUpperCase() + id.replace('_', ' ').slice(SECONDLETTER);
 }
 
 function toId(title) {

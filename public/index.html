@@ -65,6 +65,38 @@
     <h2>Add ingredient</h2>
     <form id="add-form">
       <!-- TODO: Add your HTML-1 solution here -->
+      <label for="new-product-title">Product name</label>
+      <input id="new-product-title" type="text" name="title" required>
+
+      <label for="new-product-unit">Unit</label>
+      <select id="new-product-unit" name="unit">
+        <option value="kg">Kilo</option>
+        <option value="gram">Gram</option>
+        <option value="liters">Liters</option>
+        <option value="units">Units</option>
+      </select>
+
+      <fieldset>
+        <legend>Quantity</legend>
+        <label for="new-product-abailable">Available</label>
+        <input id="new-product-abailable" name="available" type="number" min="0" required>
+
+        <label for="new-product-minimum">Minimum</label>
+        <input id="new-product-minimum" name="minimum" type="number" min="0" required>
+
+        <label for="new-product-optimum">Optimum</label>
+        <input id="new-product-optimum" name="optimum" type="number" min="0" required>
+      </fieldset>
+
+      <input id="new-product-available-season" type="checkbox" name="available-season" checked>
+      <label for="new-product-available-season">Available in season</label>
+
+      <label for="new-product-price">Average price per unit</label>
+      <input id="new-product-price" type="number" min="0" name="average-price-per-unit" required>
+
+      <div>
+        <button type="submit">add</button>
+      </div>
     </form>
     <button id="close-add-dialog" class="button">Close</button>
   </dialog>
