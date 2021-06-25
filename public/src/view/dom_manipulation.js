@@ -15,6 +15,7 @@ const rowTemplate = document.getElementById('row-template');
  */
 function openModal(id) {
   // TODO: Add your WEB-2 solution here and in the closeModal function.
+  document.querySelector(`[data-dialog="${id}"]`).showModal();
 }
 
 /**
@@ -24,6 +25,7 @@ function openModal(id) {
  */
 function closeModal(id) {
   // TODO: Add your WEB-2 solution here and in the openModal function.
+  document.querySelector(`[data-dialog="${id}"]`).close();
 }
 
 function handleInputChange(event) {
@@ -160,9 +162,6 @@ export default class DOMService {
    */
   markLowOnStock(ingredient, row) {
     // TODO: Add your WEB-1 solution here
-    console.log(ingredient);
-    console.log(row);
-
     if (ingredient.quantity.available < ingredient.quantity.minimum) {
       row.querySelector('tr').classList.add('low-on-stock');
     }
