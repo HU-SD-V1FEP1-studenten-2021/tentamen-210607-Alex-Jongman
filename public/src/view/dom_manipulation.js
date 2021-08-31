@@ -15,6 +15,7 @@ const rowTemplate = document.getElementById('row-template');
  */
 function openModal(id) {
   // TODO: Add your WEB-2 solution here and in the closeModal function.
+  document.querySelector(`[data-dialog="${id}"]`).showModal();
 }
 
 /**
@@ -24,6 +25,7 @@ function openModal(id) {
  */
 function closeModal(id) {
   // TODO: Add your WEB-2 solution here and in the openModal function.
+  document.querySelector(`[data-dialog="${id}"]`).close();
 }
 
 function handleInputChange(event) {
@@ -68,7 +70,9 @@ function handleButtonClick(event) {
  */
 function toTitle(id) {
   // TODO: Replace the return statement and add your JS-1 solution here
-  return id;
+  const FIRSTLETTER = 0;
+  const SECONDLETTER = 1;
+  return id.charAt(FIRSTLETTER).toUpperCase() + id.replace('_', ' ').slice(SECONDLETTER);
 }
 
 function toId(title) {
@@ -142,8 +146,11 @@ export default class DOMService {
    * @param {DOM-Node} row
    */
   attachButtonEventListeners(row) {
-    this.attachInfoButtonEventListeners(row);
+    // this.attachInfoButtonEventListeners(row);
     // TODO: Add your WEB-3 solution here
+    row.querySelectorAll('.button').forEach((button) => {
+      button.addEventListener('click', handleButtonClick);
+    })
   }
 
   attachChangeEventListeners(row) {
@@ -158,6 +165,9 @@ export default class DOMService {
    */
   markLowOnStock(ingredient, row) {
     // TODO: Add your WEB-1 solution here
+    if (ingredient.quantity.available < ingredient.quantity.minimum) {
+      row.querySelector('tr').classList.add('low-on-stock');
+    }
   }
 
   createRowForIngredient(ingredient) {

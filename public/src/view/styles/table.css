@@ -78,3 +78,21 @@ td:last-child {
 }
 
 /* TODO: Add your CSS assignment solutions here */
+
+/* CSS1: text-decoration maakt dat het doorgestreept  */
+.out-of-season th {
+  text-decoration: line-through;
+}
+
+
+@media (min-width: 960px) { /* media query voor miniaal 960px */
+  table caption {
+    text-align: left; /* maakt dat het links uitgelijnd wordt */
+  }
+}
+
+@media (min-width: 768px) {
+  tr {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
